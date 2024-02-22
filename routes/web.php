@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+//Admin Routes
+use App\Http\Controllers\Backend\MainController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +16,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+
+
+//Main
+Route::get('/',[MainController::class,'view'])->name('master');
+
