@@ -64,8 +64,11 @@
       @include('backend.fixed.header')
       <!-- End Navbar -->
 
+     <div class="panel-header panel-header-sm">
+        <canvas>  @yield('content') </canvas>
+      </div>
 
-      <div class="panel-header panel-header-lg">
+      <!-- <div class="panel-header panel-header-lg">
         <canvas id="bigDashboardChart"></canvas>
       </div>
       <div class="content">
@@ -329,7 +332,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div>  -->
       <footer class="footer">
         @include('backend.fixed.footer')
       </footer>

@@ -2,8 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 
-//Admin Routes
+//Backend
 use App\Http\Controllers\Backend\MainController;
+
+
+//Frontend
+use App\Http\Controllers\Frontend\HomeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,5 +28,9 @@ use App\Http\Controllers\Backend\MainController;
 
 
 //Main
-Route::get('/',[MainController::class,'view'])->name('master');
+Route::get('/',[MainController::class,'view'])->name('view');
+
+
+//Frontend
+Route::get('/home',[HomeController::class,'view'])->name('view');
 
