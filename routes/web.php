@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 //Backend
 use App\Http\Controllers\Backend\MainController;
+use App\Http\Controllers\Backend\CategoryController;
 
 
 //Frontend
@@ -29,6 +30,10 @@ use App\Http\Controllers\Frontend\HomeController;
 
 //Main
 Route::get('/',[MainController::class,'view'])->name('view');
+Route::get('/category/list',[CategoryController::class,'category_list'])->name('category.list');
+Route::get('/category/create',[CategoryController::class,'category_create'])->name('category.create');
+Route::post('/category/store',[CategoryController::class,'category_store'])->name('category.store');
+
 
 
 //Frontend
