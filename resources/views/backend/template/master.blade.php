@@ -5,6 +5,7 @@
 <head>
 
     <meta charset="utf-8">
+    @notifyCss
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -20,10 +21,13 @@
 
     <!-- Custom styles for this template-->
     <link href="{{url('backend/css/sb-admin-2.min.css')}}" rel="stylesheet">
+   
 
 </head>
 
 <body id="page-top">
+
+
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -43,7 +47,7 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-               
+                @yield('content')
                 <!-- /.container-fluid -->
 
             </div>
@@ -100,6 +104,7 @@
     <!-- Page level custom scripts -->
     <script src="{{url('backend/js/demo/chart-area-demo.js')}}"></script>
     <script src="{{url('backend/js/demo/chart-pie-demo.js')}}"></script>
+    @notifyJs
 
 </body>
 

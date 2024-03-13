@@ -6,7 +6,7 @@
     @csrf
 <div class="form-group">
         <label for="formGroupExampleInput">Name</label>
-        <input name="cat_name" type="text" class="form-control" id="formGroupExampleInput" placeholder="Name">
+        <input  required name="cat_name" type="text" class="form-control" id="formGroupExampleInput" placeholder="Name">
     </div>
     <div class="form-group">
         <label for="">Status</label>
@@ -29,5 +29,16 @@
   <button type="submit" class="btn btn-primary">Submit</button>
   
 </form>
+
+
+@if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $message)
+                    <li>{{ $message }}</li>
+                @endforeach
+            </ul>
+        </div>
+ @endif
 
 @endsection
