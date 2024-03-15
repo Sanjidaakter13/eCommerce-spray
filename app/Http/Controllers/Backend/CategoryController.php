@@ -24,16 +24,13 @@ class CategoryController extends Controller
     public function category_store(Request $request)
     {
         //dd($request->all());
+        
         //$request->validate(['category_name'=>'required|unique:categories,name',]);
-
-        // $request->validate([
-        //     'name' => 'required',
-        // ]);
 
         $val=Validator::make($request->all(),[
             'name'=>'required',
         ]);
-
+        //migration_name::form_name
         Category::create([
             'name'=>$request->cat_name,
             'status'=>$request->cat_status,
