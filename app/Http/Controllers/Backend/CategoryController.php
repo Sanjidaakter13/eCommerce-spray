@@ -12,7 +12,7 @@ class CategoryController extends Controller
     public function category_list()
    
     {
-        $categories=Category::all();
+        $categories=Category::orderBy('id', 'asc')->paginate(5);
         return view('backend.pages.category.list',compact('categories'));
     }
 
@@ -24,6 +24,15 @@ class CategoryController extends Controller
     public function category_store(Request $request)
     {
         //dd($request->all());
+
+        $filerename=null;
+
+          if($request->hasFile('cat_image'))
+          {
+              $file=$request->file('cat_image');
+              $filerename="category_".rand(0,100000).date('Ymdhis').".".$file->getClientOriginalExtension();
+              $file->storeAs('uploads\categories',$filerename);
+          }
         
         //$request->validate(['category_name'=>'required|unique:categories,name',]);
 
@@ -33,6 +42,7 @@ class CategoryController extends Controller
         //migration_name::form_name
         Category::create([
             'name'=>$request->cat_name,
+            'image'=>$filerename,
             'status'=>$request->cat_status,
             'description'=>$request->cat_description,
         ]);
@@ -41,5 +51,52 @@ class CategoryController extends Controller
         
         
         
+    }
+
+    public function category_delete($id){
+        Category::find($id)->delete();
+
+        return redirect()->back();
+    }
+
+    public function category_view($id)
+    {
+        $category= Category::find($id);
+       
+        // dd($category);
+        return view ('backend.pages.category.view', compact('category'));
+    }
+
+    public function category_edit($id)
+    {
+        $category= Category::find($id);
+       
+        // dd($category);
+        return view ('backend.pages.category.edit', compact('category'));
+    }
+
+    public function category_update(Request $request, $id)
+    {
+        $category=Category::find($id);
+        
+        $filerename=null;
+
+          if($request->hasFile('cat_image'))
+          {
+              $file=$request->file('cat_image');
+              $filerename="category_".rand(0,100000).date('Ymdhis').".".$file->getClientOriginalExtension();
+              $file->storeAs('uploads\categories',$filerename);
+          }
+        
+        
+        //dd($category);
+        $category->update([
+            'name'=>$request->name,
+            'status'=>$request->status,
+            'description'=>$request->description,
+            'image'=>$filerename,
+        ]);
+
+        return redirect()->route('category.list');
     }
 }

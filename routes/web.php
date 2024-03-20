@@ -36,11 +36,18 @@ Route::get('/',[MainController::class,'view'])->name('view');
 Route::get('/category/list',[CategoryController::class,'category_list'])->name('category.list');
 Route::get('/category/create',[CategoryController::class,'category_create'])->name('category.create');
 Route::post('/category/store',[CategoryController::class,'category_store'])->name('category.store');
+Route::get('/category/delete/{id}',[CategoryController::class,'category_delete'])->name('category.delete');
+Route::get('/category/view/{id}',[CategoryController::class,'category_view'])->name('category.view');
+Route::get('/category/edit/{id}',[CategoryController::class,'category_edit'])->name('category.edit');
+Route::post('/category/update/{id}',[CategoryController::class,'category_update'])->name('category.update');
 
 Route::get('/product/list',[ProductController::class,'product_list'])->name('product.list');
 Route::get('/product/create',[ProductController::class,'product_create'])->name('product.create');
 Route::post('/product/store',[ProductController::class,'product_store'])->name('product.store');
-
+Route::get('/product/delete/{id}',[ProductController::class,'product_delete'])->name('product.delete');
+Route::get('/product/view/{id}',[ProductController::class,'product_view'])->name('product.view');
+Route::get('/product/edit/{id}',[ProductController::class,'product_edit'])->name('product.edit');
+Route::post('/product/update/{id}',[ProductController::class,'product_update'])->name('product.update');
 
 
 //Frontend

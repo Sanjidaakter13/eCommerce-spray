@@ -34,7 +34,6 @@
 <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
         aria-expanded="true" aria-controls="collapseUtilities">
-        <img style="height:20px; width:20px;" src="{{url('backend/icon/category.png')}}" alt="">
         <span>Category</span>  
     </a>
     <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
@@ -53,7 +52,7 @@
 <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
+                    <i class=""></i>
                     <span>Product</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">

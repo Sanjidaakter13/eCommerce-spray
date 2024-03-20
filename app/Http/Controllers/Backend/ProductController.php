@@ -14,7 +14,8 @@ class ProductController extends Controller
     public function product_list()
    
     {
-        $products=Product::with('category')->paginate(5);
+        $products=Product::with('category')->orderBy('id','desc')->paginate(5);
+
         return view('backend.pages.product.list',compact('products'));
     }
 
@@ -26,8 +27,16 @@ class ProductController extends Controller
 
     public function product_store(Request $request)
     {
-        //dd($request->all());
-        
+       //dd($request->all());
+         
+          $filerename=null;
+
+          if($request->hasFile('pro_image'))
+          {
+              $file=$request->file('pro_image');
+              $filerename="product_".rand(0,100000).date('Ymdhis').".".$file->getClientOriginalExtension();
+              $file->storeAs('uploads\products',$filerename);
+          }
         
         $validate=Validator::make($request->all(),[
     
@@ -51,14 +60,61 @@ class ProductController extends Controller
             'price'=>$request->pro_price,
             'stock'=>$request->pro_stock,
             'category_id'=>$request->category,
-            'image'=>$request->pro_image,
+            'image'=>  $filerename,
             'status'=>$request->pro_status,
             'description'=>$request->pro_description,
         ]);
         notify()->success('Product created successffully');
-            return redirect()->route('product.list');
-        
-        
-        
+            return redirect()->route('product.list');  
     }
+
+    public function product_delete($id){
+        Product::find($id)->delete();
+
+        return redirect()->back();
+    }
+
+    public function product_view($id)
+    {
+        $product=Product::find($id);
+        // dd($product);
+        return view ('backend.pages.product.view', compact('product'));
+    }
+
+    public function product_edit($id)
+    {
+        $product=Product::find($id);
+        $categories=Category::all();
+
+        // dd($product);
+        return view ('backend.pages.product.edit', compact('product','categories'));
+    }
+
+    public function product_update(Request $request, $id)
+    {
+        
+        $product=Product::find($id);
+        //dd($product);
+        $filerename=null;
+
+        if($request->hasFile('pro_image'))
+        {
+            $file=$request->file('pro_image');
+            $filerename="product_".rand(0,100000).date('Ymdhis').".".$file->getClientOriginalExtension();
+            $file->storeAs('uploads\products',$filerename);
+        }
+       
+        $product->update([
+            'name'=>$request->pro_name,
+            'price'=>$request->pro_price,
+            'stock'=>$request->pro_stock,
+            'category_id'=>$request->category,
+            'image'=>  $filerename,
+            'status'=>$request->pro_status,
+            'description'=>$request->pro_description,
+        ]);
+
+        return redirect()->route('product.list');
+    }
+
 }

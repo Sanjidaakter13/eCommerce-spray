@@ -2,7 +2,7 @@
 
 @section('content')
 
-<form action="{{route('product.store')}}" method="post">
+<form action="{{route('product.store')}}" method="post" enctype="multipart/form-data">
     @csrf
    <div class="form-group">
         <label for="formGroupExampleInput">Name</label>
@@ -30,7 +30,6 @@
     <div class="form-group">
         <label for="">Status</label>
         <select class="form-control" name="pro_status" class="custom-select custom-select-sm">
-            <option selected>Open this select menu</option>
             <option value="active">Active</option>
             <option value="inactive">Inactive</option>
         </select>
