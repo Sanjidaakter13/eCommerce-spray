@@ -2,6 +2,16 @@
 
 @section('content')
 
+@if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $message)
+                    <li>{{ $message }}</li>
+                @endforeach
+            </ul>
+        </div>
+ @endif
+
 <form action="{{route('product.store')}}" method="post" enctype="multipart/form-data">
     @csrf
    <div class="form-group">
@@ -15,10 +25,10 @@
 
     <div class="form-group">
     <label for="formGroupExampleInput">Select Category:</label>
-   <select required class="form-control" name="category" id="formGroupExampleInput"  placeholder="Category Name">
+   <select required class="form-control" name="category_name" id="formGroupExampleInput"  placeholder="Category Name">
 
     @foreach ($categories as $cat )
-    <option value="{{$cat->id}}">{{$cat->name}}</option>
+    <option value="{{$cat->name}}">{{$cat->name}}</option>
     @endforeach
    
    </select>
@@ -47,16 +57,5 @@
   <button type="submit" class="btn btn-primary">Submit</button>
   
 </form>
-
-
-@if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $message)
-                    <li>{{ $message }}</li>
-                @endforeach
-            </ul>
-        </div>
- @endif
 
 @endsection

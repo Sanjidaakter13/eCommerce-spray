@@ -40,7 +40,7 @@ class ProductController extends Controller
         
         $validate=Validator::make($request->all(),[
     
-            'category'=>'required',
+            'category_name'=>'required',
             'pro_name'=>'required',
             'pro_price'=>'required|numeric|min:10',
             'pro_stock'=>'required|numeric',
@@ -59,7 +59,7 @@ class ProductController extends Controller
             'name'=>$request->pro_name,
             'price'=>$request->pro_price,
             'stock'=>$request->pro_stock,
-            'category_id'=>$request->category,
+            'category'=>$request->category_name,
             'image'=>  $filerename,
             'status'=>$request->pro_status,
             'description'=>$request->pro_description,
@@ -108,7 +108,7 @@ class ProductController extends Controller
             'name'=>$request->pro_name,
             'price'=>$request->pro_price,
             'stock'=>$request->pro_stock,
-            'category_id'=>$request->category,
+            'category'=>$request->category_name,
             'image'=>  $filerename,
             'status'=>$request->pro_status,
             'description'=>$request->pro_description,

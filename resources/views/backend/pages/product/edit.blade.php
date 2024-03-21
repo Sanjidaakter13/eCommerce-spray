@@ -40,7 +40,7 @@
     placeholder="">
   </div>
     <button type="submit" style="border-radius:20px;" class="btn btn-primary">Update <img style="height:30px; width:30px;"
-            src="{{url('backend/icon/update-icon.png')}}" alt=""></button>
+            src="{{url('backend/assets/icon/update-icon.png')}}" alt=""></button>
 
 </form>
 @endsection

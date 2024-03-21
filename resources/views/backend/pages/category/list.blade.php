@@ -27,9 +27,9 @@
       </td>
       <td>
       <div class="row">
-      <div class="col-md-4"><a href="{{route('category.delete',$data->id)}}"><img style="height:30px; width:30px;" src="{{url('backend/icon/icons-delete.png')}}" alt=""></a></div>
-      <div class="col-md-4"><a href="{{route('category.view',$data->id)}}"><img  style="height:30px; width:30px;" src="{{url('backend/icon/icons-view.png')}}" alt=""></a></div>
-      <div class="col-md-r"><a href="{{route('category.edit',$data->id)}}"><img  style="height:30px; width:30px;" src="{{url('backend/icon/edit-icons.png')}}" alt=""></a></div>
+      <div class="col-md-4"><a href="{{route('category.delete',$data->id)}}"><img style="height:30px; width:30px;" src="{{url('backend/assets/icon/icons-delete.png')}}" alt=""></a></div>
+      <div class="col-md-4"><a href="{{route('category.view',$data->id)}}"><img  style="height:30px; width:30px;" src="{{url('backend/assets/icon/icons-view.png')}}" alt=""></a></div>
+      <div class="col-md-r"><a href="{{route('category.edit',$data->id)}}"><img  style="height:30px; width:30px;" src="{{url('backend/assets/icon/edit-icons.png')}}" alt=""></a></div>
       </div>
       </td>
     </tr>

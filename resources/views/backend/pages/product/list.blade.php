@@ -24,7 +24,7 @@
       <td>{{$key+1}}</td>
       <td>{{$data->name}}</td>
       <td>{{$data->price}}</td>
-      <td>{{$data->category_id}}</td>
+      <td>{{$data->category}}</td>
       <td>{{$data->stock}}</td>
       <td>{{$data->status}}</td>
       <td>{{$data->description}}</td>
@@ -32,9 +32,9 @@
       </td>
       <td>
       <div class="row">
-      <div class="col-md-4"><a href="{{route('product.delete',$data->id)}}"><img style="height:30px; width:30px;" src="{{url('backend/icon/icons-delete.png')}}" alt=""></a></div>
-      <div class="col-md-4"><a href="{{route('product.view',$data->id)}}"><img  style="height:30px; width:30px;" src="{{url('backend/icon/icons-view.png')}}" alt=""></a></div>
-      <div class="col-md-r"><a href="{{route('product.edit',$data->id)}}"><img  style="height:30px; width:30px;" src="{{url('backend/icon/edit-icons.png')}}" alt=""></a></div>
+      <div class="col-md-4"><a href="{{route('product.delete',$data->id)}}"><img style="height:30px; width:30px;" src="{{url('backend/assets/icon/icons-delete.png')}}" alt=""></a></div>
+      <div class="col-md-4"><a href="{{route('product.view',$data->id)}}"><img  style="height:30px; width:30px;" src="{{url('backend/assets/icon/icons-view.png')}}" alt=""></a></div>
+      <div class="col-md-r"><a href="{{route('product.edit',$data->id)}}"><img  style="height:30px; width:30px;" src="{{url('backend/assets/icon/edit-icons.png')}}" alt=""></a></div>
       </div>
       </td>
     </tr>
