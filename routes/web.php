@@ -51,5 +51,11 @@ Route::post('/product/update/{id}',[ProductController::class,'product_update'])-
 
 
 //Frontend
-Route::get('/home',[HomeController::class,'view'])->name('view');
+Route::get('/website',[HomeController::class,'view'])->name('view');
+Route::get('/home',[HomeController::class,'home'])->name('home');
+Route::get('/aboutus',[HomeController::class,'aboutus'])->name('aboutus');
+Route::get('/shop',[HomeController::class,'shop'])->name('shop');
+Route::get('/blog',[HomeController::class,'blog'])->name('blog');
+Route::get('/contact',[HomeController::class,'contact'])->name('contact');
+
 

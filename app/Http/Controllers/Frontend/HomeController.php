@@ -11,4 +11,25 @@ class HomeController extends Controller
     {
         return view('frontend.template.master');
     }
+
+    public function home()
+    {
+        return view('frontend.pages.home');  
+    }
+    public function aboutus()
+    {
+        return view('frontend.pages.aboutus');  
+    }
+    public function shop()
+    {
+        return view('frontend.pages.shop');  
+    }
+    public function blog()
+    {
+        return view('frontend.pages.blog');  
+    }
+    public function contact()
+    {
+        return view('frontend.pages.contact');  
+    }
 }
