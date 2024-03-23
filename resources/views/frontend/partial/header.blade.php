@@ -151,17 +151,24 @@
                 </div>
                 <a class="mr-1 mr-sm-3" href="#"><i class="las la-user-alt"></i></a> <a class="mr-3 d-none d-sm-inline" href="#"><i class="lar la-heart"></i></a>
                 <div class="dropdown cart_dropdown"> <a class="d-flex align-items-center" href="#"> <span class="bg-white pr-2 pl-0 py-1 rounded" data-cart-items="2"> <i class="las la-shopping-bag"></i> </span> </a>
+               
                   <div class="cart_box dropdown-menu dropdown-menu-right">
                     <ul class="cart_list">
                       <li> <a href="#" class="item_remove"><i class="ion-ios-close-empty"></i></a> <a href="#"><img src="{{url('frontend/assets/images/product/p8.jpg')}}" alt="cart_thumb1">Unpaired Running Shoes</a> <span class="cart_quantity"> 1 x <span class="cart_amount"> <span class="price_symbole">$</span></span>78.00</span> </li>
                       <li> <a href="#" class="item_remove"><i class="ion-ios-close-empty"></i></a> <a href="#"><img src="{{url('frontend/assets/images/product/p12.jpg')}}" alt="cart_thumb2">Unpaired Running Shoes</a> <span class="cart_quantity"> 1 x <span class="cart_amount"> <span class="price_symbole">$</span></span>81.00</span> </li>
                     </ul>
+
                     <div class="cart_footer">
                       <p class="cart_total"><strong>Subtotal:</strong> <span class="cart_price"> <span class="price_symbole">$</span></span>159.00</p>
                       <p class="cart_buttons"><a href="#" class="btn btn-secondary view-cart ml-2 mr-2">View Cart</a><a href="#" class="btn btn-primary ml-2 mr-2 checkout">Checkout</a></p>
                     </div>
                   </div>
                 </div>
+
+                <a style="padding:5px" href="">Login</a>
+                <a style="padding:5px" href="">Register</a>
+
+                
               </div>
             </nav>
           </div>

@@ -1,8 +1,9 @@
+
 <!------ Include the above in your HEAD tag ---------->
 
 <!DOCTYPE html>
 <html>
-
+    
 <head>
 	<title>My Awesome Login Page</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -23,7 +24,7 @@
 			width: 350px;
 			margin-top: auto;
 			margin-bottom: auto;
-			background: #f39c12;
+			background-color:PaleVioletRed;
 			position: relative;
 			display: flex;
 			justify-content: center;
@@ -33,6 +34,7 @@
 			-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 			-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 			border-radius: 5px;
+
 		}
 		.brand_logo_container {
 			position: absolute;
@@ -88,11 +90,12 @@
 			<div class="user_card">
 				<div class="d-flex justify-content-center">
 					<div class="brand_logo_container">
-						<img src="https://cdn.freebiesupply.com/logos/large/2x/pinterest-circle-logo-png-transparent.png" class="brand_logo" alt="Logo">
+						<img src="{{url('backend/assets/icon/user-icon.png')}}" class="brand_logo" alt="Logo">
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
-					<form action="{{route('admin-login')}}" method="post">
+
+					<form action="{{route('admin.login.post')}}" method="post">
                         @csrf
 						<div class="input-group mb-3">
 							<div class="input-group-append">
@@ -100,12 +103,18 @@
 							</div>
 
 							<input type="email" name="email" class="form-control input_user" value="" placeholder="email">
+							@error('email')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
 						</div>
 						<div class="input-group mb-2">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
 							<input type="password" name="password" class="form-control input_pass" value="" placeholder="password">
+							@error('password')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
 						</div>
 						<div class="form-group">
 							<div class="custom-control custom-checkbox">
@@ -118,8 +127,8 @@
 				   </div>
 					</form>
 				</div>
-
-				<div class="mt-4">
+		
+				<!-- <div class="mt-4">
 					<div class="d-flex justify-content-center links">
 						Don't have an account? <a href="#" class="ml-2">Sign Up</a>
 					</div>
@@ -127,7 +136,7 @@
 						<a href="#">Forgot your password?</a>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>

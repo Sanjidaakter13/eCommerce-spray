@@ -153,7 +153,10 @@
                     </form>
                   </div>
                 </div>
-                <a class="mr-1 mr-sm-3" href="#"><i class="las la-user-alt"></i></a> <a class="mr-3 d-none d-sm-inline" href="#"><i class="lar la-heart"></i></a>
+                <a class="mr-1 mr-sm-3" href="#"><i class="las la-user-alt"></i></a>
+                
+                <a class="mr-3 d-none d-sm-inline" href="#"><i class="lar la-heart"></i></a>
+
                 <div class="dropdown cart_dropdown"> <a class="d-flex align-items-center" href="#"> <span class="bg-white pr-2 pl-0 py-1 rounded" data-cart-items="2"> <i class="las la-shopping-bag"></i> </span> </a>
                   <div class="cart_box dropdown-menu dropdown-menu-right">
                     <ul class="cart_list">
@@ -166,6 +169,8 @@
                     </div>
                   </div>
                 </div>
+                <a style="padding:5px" href="">Login</a>
+                <a style="padding:5px" href="">Register</a>
               </div>
             </nav>
           </div>
