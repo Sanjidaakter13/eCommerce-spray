@@ -32,4 +32,16 @@ class HomeController extends Controller
     {
         return view('frontend.pages.contact');  
     }
+    public function shoppingcart()
+    {
+        return view('frontend.pages.shoppingcart');  
+    }
+    public function wishlist()
+    {
+        return view('frontend.pages.wishlist');  
+    }
+    public function checkout()
+    {
+        return view('frontend.pages.checkout');  
+    }
 }

@@ -4,7 +4,7 @@
 
 
 <header class="site-header header-1">
-    <div class="header-top bg-dark-1 py-0">
+    <!-- <div class="header-top bg-dark-1 py-0">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-12 d-flex align-items-center justify-content-between text-white">
@@ -45,7 +45,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <div id="header-wrap">
       <div class="container">
         <div class="row"> 
@@ -55,8 +55,8 @@
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto mr-auto">
-                  <li class="nav-item"> <a class="nav-link active" href="index.html">Home</a> </li>
-                  <li class="nav-item"> <a class="nav-link" href="about-us.html">About Us</a> </li>
+                  <li class="nav-item"> <a class="nav-link active" href="{{route('home')}}">Home</a> </li>
+                  <li class="nav-item"> <a class="nav-link" href="{{route('aboutus')}}">About Us</a> </li>
                   <li class="nav-item dropdown position-static"> <a class="nav-link dropdown-toggle" href="#">Categories</a>
                     <div class="dropdown-menu w-100"> 
                       <!-- Tabs -->
@@ -139,9 +139,9 @@
                       </div>
                     </div>
                   </li>
-                  <li class="nav-item"> <a class="nav-link" href="product-grid-left-sidebar.html">Shop</a> </li>
-                  <li class="nav-item"> <a class="nav-link" href="blog-grid.html">Blog</a> </li>
-                  <li class="nav-item"> <a class="nav-link" href="contact-us.html">Contact</a> </li>
+                  <li class="nav-item"> <a class="nav-link" href="{{route('shop')}}">Shop</a> </li>
+                  <li class="nav-item"> <a class="nav-link" href="{{route('blog')}}">Blog</a> </li>
+                  <li class="nav-item"> <a class="nav-link" href="{{route('contact')}}">Contact</a> </li>
                 </ul>
               </div>
               <div class="right-nav align-items-center d-flex justify-content-end">
@@ -169,8 +169,14 @@
                     </div>
                   </div>
                 </div>
-                <a style="padding:5px" href="">Login</a>
-                <a style="padding:5px" href="">Register</a>
+                @guest
+                <a style="padding:5px" href="{{route('customer.login')}}">Login</a>
+                <a style="padding:5px" href="{{route('customer.registration')}}">Register</a>
+                @endguest
+
+                @auth
+                <a href="{{route('customer.logout')}}">Logout</a>
+                @endauth
               </div>
             </nav>
           </div>
@@ -1110,36 +1116,7 @@
             </div>
             <!-- End Blog Card --> 
           </div>
-          <div class="col-12 col-lg-4 mt-5 mt-lg-0"> 
-            <!-- Blog Card -->
-            <div class="card border-0 bg-transparent">
-              <div class="position-relative rounded overflow-hidden bg-light-4">
-              <span class="featured-icon"><i class="las la-volume-up"></i></span>
-                <div class="loader-container">
-                  <div class="rectangle-1"></div>
-                  <div class="rectangle-2"></div>
-                  <div class="rectangle-3"></div>
-                  <div class="rectangle-4"></div>
-                  <div class="rectangle-5"></div>
-                  <div class="rectangle-6"></div>
-                  <div class="rectangle-5"></div>
-                  <div class="rectangle-4"></div>
-                  <div class="rectangle-3"></div>
-                  <div class="rectangle-2"></div>
-                  <div class="rectangle-1"></div>
-                </div>
-                <audio controls autoplay style="object-fit: cover; width:100%">
-                  <source src="{{url('frontend/assets/images/blog/audio.mp3')}}" type="audio/mpeg">
-                </audio>
-              </div>
-              <div class="card-body px-0 pb-0">
-                <div> <span class="date text-pink">27 March</span> <a class="d-inline-block link-title btn-link text-small" href="#">Sleepwear,</a> <a class="d-inline-block link-title btn-link text-small" href="#">Jwellery,</a> <a class="d-inline-block link-title btn-link text-small" href="#">Fashion</a> </div>
-                <h2 class="h5 font-w-5 mt-2"> <a class="link-title" href="blog-single.html">Awesome template with lot's of features on the board!</a> </h2>
-              </div>
-              <div></div>
-            </div>
-            <!-- End Blog Card --> 
-          </div>
+         
         </div>
       </div>
     </section>

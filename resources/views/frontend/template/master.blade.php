@@ -5,6 +5,7 @@
 
 <!-- meta tags -->
 <meta charset="utf-8">
+@notifyCss
 <meta name="keywords" content="bootstrap 4, premium, multipurpose, ecommerce, html5, css" />
 <meta name="description" content="Bootstrap 4 Landing Page Template" />
 <meta name="author" content="www.themesground.com" />
@@ -26,10 +27,13 @@
 </head>
 
 <body>
+@include('notify::components.notify')
 
 <!-- page wrapper start -->
 
+
 <div class="page-wrapper"> 
+
   
   <!-- preloader start -->
   
@@ -193,6 +197,7 @@
 	}
 	// ]]>
 </script>
+@notifyJs
 </body>
 
 </html>

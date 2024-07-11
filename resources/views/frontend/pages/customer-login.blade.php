@@ -35,15 +35,16 @@
               <div class="mb-4">
               <h3>Sign In </h3>
             </div>
-            <form action="#" method="post">
+            <form action="{{route('customer.do.login')}}" method="post">
+                @csrf
               <div class="form-group first">
-                <label for="username">Username</label>
-                <input type="text" class="form-control" id="username">
+                <label for="email">Email</label>
+                <input name="email" type="text" class="form-control" id="username">
 
               </div>
               <div class="form-group last mb-4">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" id="password">
+                <input name="password" type="password" class="form-control" id="password">
                 
               </div>
 

@@ -20,7 +20,7 @@ class UserController extends Controller
             $val=Validator::make($request->all(),
             [
                 'email'=>'required|email',
-                'password'=>'required|min:6',
+                'password'=>'required|min:5',
             ]);
 
             if($val->fails())
@@ -56,15 +56,7 @@ class UserController extends Controller
     }
 
 
-    public function registration_view()
-    {
-        return view('backend.layouts.register');
-    }
-
-    public function doregister()
-    {
-        return view();
-    }
+    
 
    
 }

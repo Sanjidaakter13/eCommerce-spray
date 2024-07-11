@@ -28,6 +28,8 @@
 <body id="page-top">
 
 
+@include('notify::components.notify')
+
 
     <!-- Page Wrapper -->
     <div id="wrapper">

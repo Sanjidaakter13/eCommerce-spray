@@ -44,9 +44,6 @@ Route::get('/admin',[MainController::class,'view'])->name('dashboard');
 
 //Authentication
 Route::get('/admin/logout',[UserController::class, 'logout'])->name('admin.logout');
-Route::get('/registration/view',[UserController::class,'registration_view'])->name('registration.view');
-Route::post('/doregister',[UserController::class,'doregister'])->name('doregister');
-
 
 //Category
 Route::get('/category/list',[CategoryController::class,'category_list'])->name('category.list');
@@ -77,9 +74,18 @@ Route::get('/aboutus',[HomeController::class,'aboutus'])->name('aboutus');
 Route::get('/shop',[HomeController::class,'shop'])->name('shop');
 Route::get('/blog',[HomeController::class,'blog'])->name('blog');
 Route::get('/contact',[HomeController::class,'contact'])->name('contact');
+Route::get('/shoppingcart',[HomeController::class,'shoppingcart'])->name('shoppingcart');
+Route::get('/wishlist',[HomeController::class,'wishlist'])->name('wishlist');
+Route::get('/checkout',[HomeController::class,'checkout'])->name('checkout');
+
 
 //Customer
-Route::get('/customer/login',[CustomerController::class,'customer_login'])->name('customer.login');
+Route::get('/registration',[CustomerController::class,'registration'])->name('customer.registration');
+Route::post('/registration',[CustomerController::class, 'store'])->name('customer.store');
 
+Route::get('/login',[CustomerController::class, 'login'])->name('customer.login');
+Route::post('/login',[CustomerController::class,'doLogin'])->name('customer.do.login');
 
-
+Route::group(['middleware'=>'auth'],function(){
+    Route::get('/logout',[CustomerController::class, 'logout'])->name('customer.logout');
+});

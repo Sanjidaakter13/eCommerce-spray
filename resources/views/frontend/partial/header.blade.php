@@ -1,6 +1,6 @@
 
 <header class="site-header header-1">
-    <div class="header-top bg-dark-1 py-0">
+    <!-- <div class="header-top bg-dark-1 py-0">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-12 d-flex align-items-center justify-content-between text-white">
@@ -41,7 +41,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <div id="header-wrap">
       <div class="container">
         <div class="row"> 
@@ -51,8 +51,8 @@
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto mr-auto">
-                  <li class="nav-item"> <a class="nav-link active" href="index.html">Home</a> </li>
-                  <li class="nav-item"> <a class="nav-link" href="about-us.html">About Us</a> </li>
+                  <li class="nav-item"> <a class="nav-link active" href="{{route('home')}}">Home</a> </li>
+                  <li class="nav-item"> <a class="nav-link" href="{{route('aboutus')}}">About Us</a> </li>
                   <li class="nav-item dropdown position-static"> <a class="nav-link dropdown-toggle" href="#">Categories</a>
                     <div class="dropdown-menu w-100"> 
                       <!-- Tabs -->
@@ -135,9 +135,9 @@
                       </div>
                     </div>
                   </li>
-                  <li class="nav-item"> <a class="nav-link" href="product-grid-left-sidebar.html">Shop</a> </li>
-                  <li class="nav-item"> <a class="nav-link" href="blog-grid.html">Blog</a> </li>
-                  <li class="nav-item"> <a class="nav-link" href="contact-us.html">Contact</a> </li>
+                  <li class="nav-item"> <a class="nav-link" href="{{route('shop')}}">Shop</a> </li>
+                  <li class="nav-item"> <a class="nav-link" href="{{route('blog')}}">Blog</a> </li>
+                  <li class="nav-item"> <a class="nav-link" href="{{route('contact')}}">Contact</a> </li>
                 </ul>
               </div>
               <div class="right-nav align-items-center d-flex justify-content-end">
@@ -164,10 +164,17 @@
                     </div>
                   </div>
                 </div>
+           
+               
 
-                <a style="padding:5px" href="">Login</a>
-                <a style="padding:5px" href="">Register</a>
+                @guest
+                <a style="padding:5px" href="{{route('customer.login')}}">Login</a>
+                <a style="padding:5px" href="{{route('customer.registration')}}">Register</a>
+                @endguest
 
+                @auth
+                <a href="{{route('customer.logout')}}">Logout</a>
+                @endauth
                 
               </div>
             </nav>

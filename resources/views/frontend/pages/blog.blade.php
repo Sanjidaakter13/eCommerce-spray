@@ -71,36 +71,7 @@
             </div>
         <!-- End Blog Card -->
       </div>
-      <div class="col-12 col-lg-4 col-md-6 mt-5 mt-lg-0">
-        <!-- Blog Card -->
-        <div class="card border-0 bg-transparent">
-              <div class="position-relative rounded overflow-hidden bg-light-4">
-                <div class="position-absolute z-index-1 bg-white text-pink text-center py-1 px-3 my-4">12 Mar</div>
-                <div class="loader-container">
-                  <div class="rectangle-1"></div>
-                  <div class="rectangle-2"></div>
-                  <div class="rectangle-3"></div>
-                  <div class="rectangle-4"></div>
-                  <div class="rectangle-5"></div>
-                  <div class="rectangle-6"></div>
-                  <div class="rectangle-5"></div>
-                  <div class="rectangle-4"></div>
-                  <div class="rectangle-3"></div>
-                  <div class="rectangle-2"></div>
-                  <div class="rectangle-1"></div>
-                </div>
-                <audio controls autoplay="" style="object-fit: cover; min-width:350px">
-                  <source src="{{url('frontend/assets/images/blog/audio.mp3')}}" type="audio/mpeg">
-                </audio>
-              </div>
-              <div class="card-body px-0 pb-0">
-                <div> <a class="d-inline-block link-title btn-link text-small" href="#">Sleepwear,</a> <a class="d-inline-block link-title btn-link text-small" href="#">Jwellery,</a> <a class="d-inline-block link-title btn-link text-small" href="#">Fashion</a> </div>
-                <h2 class="h5 font-w-5 mt-2"> <a class="link-title" href="blog-detail.html">Awesome template with lot's of features on the board!</a> </h2>
-              </div>
-              <div></div>
-            </div>
-        <!-- End Blog Card -->
-      </div>
+     
       <div class="col-12 col-lg-4 col-md-6 mt-5">
         <!-- Blog Card -->
         <div class="card border-0 bg-transparent">
